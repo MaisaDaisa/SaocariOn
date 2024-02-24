@@ -1,0 +1,139 @@
+@import url("./zeroOut.css");
+@import url("./colors.css");
+@import url("./fonts.css");
+
+input,
+button,
+textarea,
+select {
+    font-family: var(--fnt-Body);
+    font-size: var(--fnt-size-Body);
+    line-height: var(--fnt-size-Body);
+    letter-spacing: var(--tracking-Body);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--clr-cerebral-grey);
+}
+
+
+.main-header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem 1rem;
+	padding-left: 1.5rem;
+	align-items: center;
+	text-align: center;
+	background-color: var(--clr-primary-gray);
+}
+.header-logo {
+	height: 4rem;
+}
+
+/* SEARCH BAR */
+
+.form-container {
+	justify-self: center;
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+}
+
+.form-line {
+	width: 40%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-line input {
+	width: 100%;
+	padding: 1rem 2rem;
+	border-radius: 16rem;
+	border: none;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+	background-color: var(--clr-white);
+	color: var(--text-color);
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+.form-line i {
+	cursor: pointer;
+	color: var(--clr-primary-orange);
+	position: absolute;
+	top: 1rem;
+	right: 1.5rem;
+}
+
+/* HEADER RIGHT */
+
+.header-right {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+}
+
+.header-cart {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.header-cart i {
+	width: 100%;
+}
+
+.header-cart h2 {
+	position: absolute;
+	bottom: -0.3rem;
+	right: 0.4rem;
+	color: var(--clr-primary-orange);
+	justify-self: center;
+	margin-top: 0px;
+	z-index: 100;
+}
+
+.header-logout {
+	padding: 1rem 1.5rem;
+	border-radius: 16rem;
+	border: none;
+	background-color: var(--clr-primary-orange);
+	color: var(--clr-white);
+	font-size: 1.2rem;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+/*Sub-Header */
+
+.sub-header ul {
+	display: flex;
+	justify-content: flex-start;
+	gap: 2rem;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	background-color: var(--clr-secondary-gray);
+}
+.sub-header ul li a{
+	color: var(--clr-white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	flex-wrap: nowrap;
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+
+
+.sub-header ul li a i {
+	font-size: 1rem;
+}

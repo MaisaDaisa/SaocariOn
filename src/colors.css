@@ -1,0 +1,11 @@
+:root {
+    --clr-primary-orange: RGB(228, 121, 17);
+    --clr-primary-gray: #131820;
+    --clr-secondary-gray: RGB(35, 47, 62);
+    --clr-black: RGB(17, 17, 17);
+    --clr-prime-light-blue: RGB(72, 163, 198);
+    --clr-prime-cyan: 	RGB(0, 126, 185);
+    --clr-white: RGB(255, 255, 255);
+    --clr-lighter-gray: RGB(55, 71, 90);
+    --clr-cerebral-grey: RGB(224, 224, 224);
+}

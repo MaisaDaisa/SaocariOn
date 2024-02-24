@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./src/tokenCheck.js"></script>
+		<link rel="stylesheet" href="./src/index.css" />
+		<title>Home</title>
+	</head>
+	<body>
+		<header>
+            <div class="main-header">
+                <div class="header-logo">
+                    <img src="./src/img/saocarion-white.png" alt="" />
+                </div>
+                <div class="form-line" id="search-from">
+                    <input
+                        type="search"
+                        type="search"
+                        id="search-bar"
+                        placeholder="Search For Item" />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="header-right">
+                    <div class="header-cart">
+                        <i class="fa-solid fa-cart-shopping fa-lg" style="color: #ffffff"></i>
+                        <h2 class="cart-num">0</h2>
+                    </div>
+                    <button class="header-logout">Log Out</button>
+                </div>
+            </div>
+            <div class="sub-header">
+                <ul>
+                    <li>
+                        <a href="./products.html">
+                            <i class="fa-solid fa-bars"></i>
+                            All
+                        </a>
+                    </li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="#best-rated">Best Seller</a></li>
+                    <li><a href="">Random Item</a></li>
+                    <li><a href="">Buy Again</a></li>
+                    <li><a href="#best-rated">Today's Deal</a></li>
+                </ul>
+            </div>
+		</header>
+		<section class="slide-section">
+			<div class="slide-container">
+				<button class="slider-button" id="prev-slide">
+					<i class="fa-solid fa-arrow-left"></i>
+				</button>
+				<div class="slider-image-wrapper">
+					<div class="slides">
+						<div class="slide-item" id="slide-1">
+							<div class="slide-text">
+                                <a href="./products.html">
+                                    <h1>TRADE IN</h1>
+                                    <p>SAVE upto 20% on saocarion Devices after Trade in</p>
+                                </a>
+                            </div>
+							<div class="slide-image">
+								<img
+									src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+									alt="" />
+							</div>
+						</div>
+						<div class="slide-item" id="slide-2">
+							<div class="slide-text">
+                                <a href="./products.html">
+                                    <h1>NEW WINTER SALE</h1>
+                                    <p>spend your day with your close friends with new devices</p>
+                                </a>
+                            </div>
+							<div class="slide-image">
+                                <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" />
+							</div>
+						</div>
+						<div class="slide-item" id="slide-3">
+							<div class="slide-text">
+                                <a href="./products.html">
+                                    <h1>UPDATED SALE</h1>
+                                    <p>get the latest devices at unbeatable prices</p>
+                                </a>
+							</div>
+							<div class="slide-image">
+								<img
+									src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+									alt="" />
+							</div>
+						</div>
+						<div class="slide-item" id="slide-4">
+							<div class="slide-text">
+                                <a href="./products.html">
+                                    <h1>EXCLUSIVE OFFER</h1>
+                                    <p>upgrade your tech with our limited-time offer</p>
+                                </a>
+							</div>
+							<div class="slide-image">
+								<img
+									src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+									alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="slider-button" id="next-slide">
+					<i class="fa-solid fa-arrow-right"></i>
+				</button>
+			</div>
+		</section>
+		<section class="categories">
+            <div class="category-items">
+                <ul>
+                    <li>
+                        <a href="./products.html?category=men's clothing">
+                            <i class="fa-solid fa-person"></i>
+                            <p>Men's Clothing</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./products.html?category=women's clothing">
+                            <i class="fa-solid fa-person-dress"></i>
+                            <p>Women's Clothing</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./products.html?category=electornics">
+                            <i class="fa-solid fa-plug"></i>
+                            <p>Electronics</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./products.html?category=jewelry">
+                            <i class="fa-solid fa-gem"></i>
+                            <p>Jewelry</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+		<section class="best-rated" id="best-rated">
+            <div class="best-rated-header">
+                <h1>Best Rated</h1>
+            </div>
+            <div class="product-nav">
+                <a href="">View All</a>
+            </div>
+            <div class="product-container">
+               
+            </div>
+            
+        </section>
+		<footer></footer>
+
+		<script src="./src/index.js"></script>
+		<script
+			src="https://kit.fontawesome.com/7e3cb93b9b.js"
+			crossorigin="anonymous"></script>
+	</body>
+</html>

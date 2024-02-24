@@ -1,0 +1,60 @@
+
+@import url("./global.css");
+
+
+body {
+    background: var(--clr-white);
+}
+
+main {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20dvh;
+    align-items: center;
+    gap: 3rem;
+}
+
+.logo {
+    width: 20vw;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.login-form form{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.login-form input {
+    text-align: left;
+    width: 20vw;
+    padding: 1rem;
+    border: 1px solid var(--clr-lighter-gray);
+    border-radius: 1rem;
+    background: var(--clr-secondary-gray);
+    color: var(--clr-primary-orange);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+::placeholder {
+    color: var(--clr-cerebral-grey);
+}
+
+.login-form button {
+    width: 8vw;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background: var(--clr-primary-orange);
+    color: var(--clr-white);
+    font-size: 1.2rem;
+    cursor: pointer;
+}

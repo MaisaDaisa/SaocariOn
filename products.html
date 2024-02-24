@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./src/tokenCheck.js"></script>
+		<link rel="stylesheet" href="./src/products.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<div class="main-header">
+				<div class="header-logo">
+					<img src="./src/img/saocarion-white.png" alt="" />
+				</div>
+				<div class="form-line" id="search-from">
+					<input
+						type="search"
+						type="search"
+						id="search-bar"
+						placeholder="Search For Item" />
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</div>
+				<div class="header-right">
+					<div class="header-cart">
+						<i
+							class="fa-solid fa-cart-shopping fa-lg"
+							style="color: #ffffff"></i>
+						<h2 class="cart-num">0</h2>
+					</div>
+					<button class="header-logout">Log Out</button>
+				</div>
+			</div>
+			<div class="sub-header">
+				<ul>
+					<li>
+						<a href="./products.html">
+							<i class="fa-solid fa-bars"></i>
+							All
+						</a>
+					</li>
+					<li><a href="/index.html">Home</a></li>
+					<li><a href="#best-rated">Best Seller</a></li>
+					<li><a href="">Random Item</a></li>
+					<li><a href="">Buy Again</a></li>
+					<li><a href="#best-rated">Today's Deal</a></li>
+				</ul>
+			</div>
+		</header>
+        <section class="products-container">
+			<div class="product-filters">
+				<ul class="filter-container">
+					<li class="filter-reviews">
+						<h4>Customer Review</h4>
+						<ul>
+							<li>
+								<div>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>						
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+								</div>
+								<p>& Up</p>
+							</li>
+							<li>
+								<div>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+								</div>
+								<p>& Up</p>
+							</li>
+							<li>
+								<div>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+								</div>
+								<p>& Up</p>
+							</li>
+							<li>
+								<div>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+									<i class="fa-regular fa-star"></i>
+								</div>
+								<p>& Up</p>
+							</li>
+						</ul>
+					</li>
+					<li class="filter-price">
+						<h4>Price</h4>
+						<ul>
+							<li>
+								<p id="price-1">Under $25</p>
+							</li>
+							<li>
+								<p id="price-2">$25 to $50</p>
+							</li>
+							<li>
+								<p id="price-3">$50 to $100</p>
+							</li>
+							<li>
+								<p id="price-4">$100 to $200</p>
+							</li>
+							<li>
+								<p id="price-5">$200 & Above</p>
+							</li>
+						</ul>
+					</li>
+					<li class="filter-category">
+						<h4>Category</h4>
+						<ul>
+							<li>
+								<p id="category-1">Electronics</p>
+							</li>
+							<li>
+								<p id="category-2">Men's Clothing</p>
+							</li>
+							<li>
+								<p id="category-3">Women's Clothing</p>
+							</li>
+							<li>
+								<p id="category-4">Jewelry</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="products-list">
+				<div class="product-card">
+
+				</div>
+			</div>
+        </section>
+		<script src="./src/products.js"></script>
+		<script
+			src="https://kit.fontawesome.com/7e3cb93b9b.js"
+			crossorigin="anonymous"></script>
+	</body>
+</html>
