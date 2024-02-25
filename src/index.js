@@ -1,3 +1,4 @@
+import {cartManagement, priceBeautify, additionalStarCalc} from './Constant Fucntions/dataManipulations.js';
 
 const getProducts = async () => {
 	const data = await (await fetch("https://fakestoreapi.com/products")).json();
@@ -5,6 +6,7 @@ const getProducts = async () => {
 };
 
 const renderProducts = async () => {
+	cartManagement();
 	const products = await getProducts();
 	const sortedByRating = await products.sort((a, b) => b.rating.rate - a.rating.rate);
 
@@ -19,24 +21,11 @@ const renderProducts = async () => {
 	const displayBestRated = async () => {
 		const productContainer = document.querySelector(".product-container");
 		const fullStar = `<i class="fa-solid fa-star"></i>`;
-		const halfStar = `<i class="fa-solid fa-star-half"></i>`;
-		
 
 		for (let i = 0; i < 5; i++) {
 			const rating = sortedByRating[i].rating.rate;
-			let price = sortedByRating[i].price;
-			let additionalStar = ""
-			if (0.3 < (rating - Math.floor(rating)) < 0.7) {
-				additionalStar = halfStar;
-			} else if ((rating- Math.floor(rating)) >= 0.7) {
-				additionalStar = fullStar;
-			}
-			console.log(price);
-			console.log((price % 1).toFixed(2));
-			if ((price % 1).toFixed(2) == 0) {
-				price = price+0.99;
-			} 
-			console.log(price);
+			const additionalStar = additionalStarCalc(rating);
+			const price = priceBeautify(sortedByRating[i].price);
 			const productCard = document.createElement("div");
 			productCard.classList.add("product-card");
 			productCard.innerHTML = `
@@ -64,11 +53,9 @@ const renderProducts = async () => {
 			</div>
 			`;
 			productCard.addEventListener("mouseenter", () => {
-				console.log("Mouse entered the card");
 				productCard.classList.add("hovered");
 			});
 			productCard.addEventListener("mouseleave", () => {
-				console.log("Mouse left the card");
 				productCard.classList.remove("hovered");
 			});
 			productContainer.appendChild(productCard);
@@ -79,53 +66,6 @@ const renderProducts = async () => {
 	await displayBestRated();
 }
 renderProducts();
-
-
-
-// Search Bar Functionality
-
-const searchInput = document.getElementById('search-bar');
-const magnifyingGlass = document.querySelector('.fa-magnifying-glass')
-
-searchInput.addEventListener('keydown', function(event) {
-    if (event.keyCode === 13) {
-        const searchTerm = searchInput.value.trim();
-        if (searchTerm == '') {
-			window.open("/products.html", "_self");
-        } else {
-            console.log(searchTerm)
-			window.open(`/products.html?search=${searchTerm}`, "_self");
-        }
-    }
-});
-
-magnifyingGlass.addEventListener('click', () => {
-    const searchTerm = searchInput.value.trim();
-    if (searchTerm == '') {
-		window.open("/products.html", "_self");
-	} else {
-		console.log(searchTerm)
-		window.open(`/products.html?search=${searchTerm}`, "_self");
-	}
-})
-
-
-
-
-
-// LOGOUT BUTTON
-
-const logoutButton = document.querySelector(".header-logout");
-console.log(logoutButton);
-
-logoutButton.addEventListener("click", () => {
-	localStorage.removeItem("saocariOn-token");
-	window.open("/login.html", "_self");
-});
-
-
-
-
 
 
 // SLIDER

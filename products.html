@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="./src/tokenCheck.js"></script>
+		<script src="./src/Constant Fucntions/tokenCheck.js"></script>
 		<link rel="stylesheet" href="./src/products.css" />
 		<title>Document</title>
 	</head>
@@ -40,20 +40,20 @@
 						</a>
 					</li>
 					<li><a href="/index.html">Home</a></li>
-					<li><a href="#best-rated">Best Seller</a></li>
+					<li><a href="./index.html#best-rated">Best Seller</a></li>
 					<li><a href="">Random Item</a></li>
 					<li><a href="">Buy Again</a></li>
-					<li><a href="#best-rated">Today's Deal</a></li>
+					<li><a href="./index.html#best-rated">Today's Deal</a></li>
 				</ul>
 			</div>
 		</header>
         <section class="products-container">
 			<div class="product-filters">
 				<ul class="filter-container">
-					<li class="filter-reviews">
-						<h4>Customer Review</h4>
-						<ul>
-							<li>
+					<li class="filter-ratings">
+						<h4>Customer ratings</h4>
+						<ul class="raing-list">
+							<li id="rating-4">
 								<div>
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -63,7 +63,7 @@
 								</div>
 								<p>& Up</p>
 							</li>
-							<li>
+							<li id="rating-3">
 								<div>
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -73,7 +73,7 @@
 								</div>
 								<p>& Up</p>
 							</li>
-							<li>
+							<li id="rating-2">
 								<div>
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -83,7 +83,7 @@
 								</div>
 								<p>& Up</p>
 							</li>
-							<li>
+							<li id="rating-1">
 								<div>
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-regular fa-star"></i>
@@ -135,12 +135,11 @@
 				</ul>
 			</div>
 			<div class="products-list">
-				<div class="product-card">
-
-				</div>
+				<!-- THING GO HERE -->
 			</div>
         </section>
-		<script src="./src/products.js"></script>
+		<script src="./src/products.js" type="module"></script>
+		<script src="./src/header.js"></script>
 		<script
 			src="https://kit.fontawesome.com/7e3cb93b9b.js"
 			crossorigin="anonymous"></script>

@@ -233,12 +233,11 @@ section {
 .product-container {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 	justify-content: space-between;
 	width: var(--num-product-container-width);
 	gap: 1rem;
+	height: 45rem;
 	padding: 2rem 2rem;
-	height: 40rem;
 	overflow-x: auto; /* Add this line */
 	transition: 300ms;
 }
@@ -250,47 +249,48 @@ section {
 .product-card {
 	background-color: var(--clr-white);
 	width: var(--num-product-width);
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: flex-start;
+	flex: 1;
 	gap: 1rem;
 	padding: 1rem;
 	border-radius: 1rem;
 	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-	transition: 1000ms;
+	transition: all 1000ms;
+	overflow: hidden;
 }
+
 
 .hovered {
-	width: 25vw;
+	flex: 2;
 }
 
-.product-container .product-card:last-child.hovered {
-	justify-content: flex-end;
-}
 .product-image{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 55%;
+	height: 45%;
 }
 
-.product-image a {
-	max-height: 100%;
+.product-card .product-image a {
+	object-fit: contain;
 	height: 100%;
+	max-height: 100%;
 }
-
 .product-card img {
+	object-fit: contain;
 	padding: 1rem;
-	width: 100%;
+	height: 100%;
 	max-height: 100%;
 }
 
 .product-details {
-	height: 50%;
+	height: 40%;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 	padding: 0 1rem;
 	gap: 0.3rem;
 }

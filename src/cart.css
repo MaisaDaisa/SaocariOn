@@ -1,0 +1,138 @@
+@import url("./global.css");
+
+body {
+    background : var(--clr-white);
+}
+
+.cart-container {
+    display: grid;
+    grid-template-columns: 1fr 20%;
+}
+
+.cart-item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.cart-item {    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 20px;
+    width: 100%;
+    max-height: 15rem;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--clr-primary-orange);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+
+.item-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 15%;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    width: 50%;
+    height: 100%;
+}
+
+.item-text h3 {
+    font-size: 2rem;
+    font-weight: 600;
+
+}
+.item-quantity-manipulation {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+.item-quantity-manipulation .item-quantity-changer{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-quantity-changer p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.item-quantity-changer button {
+    background-color: var(--clr-primary-orange);
+    color: var(--clr-white);
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.item-deleter p{
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Cart Summary */
+
+.cart-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cart-summary h2 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.cart-summary .product-price h4{
+    font-size: 3rem;
+}
+
+.cart-summary .product-price span{
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+.cart-summary .checkout-btn {
+    box-shadow: 0px 0px 10px 0px var(--clr-primary-orange);
+    padding: 1.5rem 2rem;
+    border-radius: 16rem;
+    border: none;
+    background-color: var(--clr-primary-orange);
+    color: var(--clr-white);
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 
+        scale 0.3s ease, 
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cart-summary .checkout-btn:hover {
+    box-shadow: 0px 0px 20px 0px var(--clr-prime-cyan);
+    background-color: var(--clr-prime-cyan);
+    scale: 1.1;
+}
+

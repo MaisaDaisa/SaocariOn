@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./src/Constant Fucntions/tokenCheck.js"></script>
+    <link rel="stylesheet" href="./src/cart.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="main-header">
+            <div class="header-logo">
+                <img src="./src/img/saocarion-white.png" alt="" />
+            </div>
+            <div class="form-line" id="search-from">
+                <input type="search" type="search" id="search-bar" placeholder="Search For Item" />
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="header-right">
+                <div class="header-cart">
+                    <i class="fa-solid fa-cart-shopping fa-lg" style="color: #ffffff"></i>
+                    <h2 class="cart-num">0</h2>
+                </div>
+                <button class="header-logout">Log Out</button>
+            </div>
+        </div>
+        <div class="sub-header">
+            <ul>
+                <li>
+                    <a href="./products.html">
+                        <i class="fa-solid fa-bars"></i>
+                        All
+                    </a>
+                </li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="./index.html#best-rated">Best Seller</a></li>
+                <li><a href="">Random Item</a></li>
+                <li><a href="">Buy Again</a></li>
+                <li><a href="./index.html#best-rated">Today's Deal</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="cart-container">
+        <div class="cart-item-container">
+            
+        </div>
+        <div class="cart-summary">
+            <h2>Total: </h2>
+            <div class="product-price">
+                <span>$</span>
+                <h4>109.95</h4>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </section>
+    <script src="./src/cart.js" type="module"></script>
+    <script src="./src/header.js"></script>
+    <script src="https://kit.fontawesome.com/7e3cb93b9b.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

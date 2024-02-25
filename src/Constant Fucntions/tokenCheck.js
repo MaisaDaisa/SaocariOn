@@ -10,13 +10,14 @@ if (localStorage.getItem('saocariOn_token')) {
     }
     if (localToken.token.token === compareToken.token) {
         console.log('Token is and...')
-       if (localToken.time - Date.now() < 1000 * 60 * 60 * 24) {
+        const comparison = Date.now() - localToken.time
+       if (comparison < 1000 * 60 * 60 * 24) {
             // This compares the time the token was given to the current time and if it is more than 24 hours then the token is not valid 
             // the date subtraction is in milliseconds so 1000 * 60 * 60 * 24 is 24 hours
             
             // NOTE: THIS IS NOT A SECURE WAY TO CHECK THE TOKEN BECAUSE THE USER CAN CHANGE THE TIME ON THEIR DEVICE THATS WHY 
             // THE TOKEN IS USUALLY CHECKED ON THE BACKEND
-           console.log('Token time is valid')
+           console.log('Token time is expired, going back to login page')
        } else {
               console.log('Token is expired, going back to login page')
               window.open('login.html', '_self')
