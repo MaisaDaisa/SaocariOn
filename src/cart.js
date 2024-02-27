@@ -26,6 +26,7 @@ const updateTotalPrice = (items) => {
 const displayItems = (items) => {
     const cartContainer = document.querySelector('.cart-item-container');
 
+
     for (const [key, item] of Object.entries(items)) {
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
@@ -92,12 +93,27 @@ const displayItems = (items) => {
 
     cartManagement();
     updateTotalPrice(items);
+}
 
+const emptyCart = () => {
+    const cartContainer = document.querySelector('.cart-item-container');
+    cartContainer.style = `
+        display: flex;
+        align-items: center;
+        padding: 10rem 0;
+    `;
+    cartContainer.innerHTML = `
+        <h1>Your Cart is Empty</h1>
+    `;
 }
 
 const initFunction = async () => {
     const items = await getItems(cartInLocal);
-    displayItems(items);
+    if (cartInLocal === null || Object.keys(cartInLocal).length === 0){
+        emptyCart();
+    } else {
+        displayItems(items);
+    }
 }
 
 initFunction();
@@ -105,8 +121,12 @@ initFunction();
 // Checkout Event Listener 
 
 document.querySelector('.checkout-btn').addEventListener('click', () => {
-    alert(`Your Total is $${document.querySelector('.cart-summary h4').innerHTML}`)
-    alert('Thank you for shopping with us. Your order has been placed successfully');
-    localStorage.removeItem('cart');
-    window.location.href = 'index.html';
+    if (cartInLocal === null || Object.keys(cartInLocal).length === 0) {
+        alert('Your cart is empty. Please add items to your cart to checkout');
+    } else {
+        alert(`Your Total is $${document.querySelector('.cart-summary h4').innerHTML}`)
+        alert('Thank you for shopping with us. Your order has been placed successfully');
+        localStorage.removeItem('cart');
+        window.location.href = 'index.html';
+    }
 });

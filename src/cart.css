@@ -5,6 +5,7 @@ body {
 }
 
 .cart-container {
+    height: 90dvh;
     display: grid;
     grid-template-columns: 1fr 20%;
 }

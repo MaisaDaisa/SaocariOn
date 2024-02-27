@@ -6,6 +6,7 @@ body {
 }
 
 .product-container {
+    height: 90dvh;
     padding: 2rem;
     display: grid;
     grid-template-columns: 30% 1fr 25%;

@@ -1,3 +1,9 @@
+// Logo Redirect
+document.querySelector(".header-logo").addEventListener("click", () => {
+	window.open("/index.html", "_self");
+});
+
+
 // Search Bar Functionality
 
 const searchInput = document.getElementById("search-bar");
@@ -42,4 +48,11 @@ const cartButton = document.querySelector(".header-cart");
 
 cartButton.addEventListener("click", () => {
 	window.open("/cart.html", "_self");
+});
+
+// Subheader Redirects
+
+document.querySelector("#nav-random").addEventListener("click", () => {
+	const randomNum = Math.ceil(Math.random() * 20);
+	window.open(`/description.html?id=${randomNum}`, "_self");
 });
