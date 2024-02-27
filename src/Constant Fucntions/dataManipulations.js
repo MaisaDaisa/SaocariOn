@@ -16,8 +16,8 @@ export const cartManagement = () => {
 
 
 export const priceBeautify = (price) => {
-    if ((price % 1).toFixed(2) == 0 && price % 1 != 0) {
-        price = price+0.99;
+    if ((price % 1).toFixed(2) == 0 && price != 0) {
+        price += 0.99;
     } 
     return price;
 }
