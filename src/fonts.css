@@ -1,58 +1,141 @@
 :root {
-    --fnt-Headline: AmazonEmberDisplay_Lt;
-    --fnt-Subhead: AmazonEmber_Bd;
-    --fnt-Body: AmazonEmber_Lt;
-    --fnt-size-Headline: 2.5rem;
-    --fnt-size-Subhead: calc(var(--fnt-size-Headline) / 2); /* Subhead font size is half of headline font size */
-    --fnt-size-Body: 1.33rem; /* Body font size */
-    --space-SpaceAfterHeadline: calc(var(--fnt-size-Headline) * 2 / 3); /* Space after headline */
-    --space-BetweenFonts: 0.5rem; /* Space between different fonts */
-    --leading-Headline: calc(var(--fnt-size-Headline) * 1.33); /* Leading for headlines */
-    --tracking-Headline: 0; /* Tracking for headlines */
-    --tracking-Body: 0; /* Tracking for body text */
-    --min-line-length: 15; /* Minimum words per line for body text */
-    --white-space-border-distance: 2rem; /* Minimum distance from borders */
-    --white-space-foreground-distance: 1.5rem; /* Minimum distance from other foreground objects */
+	--fnt-Headline: AmazonEmberDisplay_Lt;
+	--fnt-Subhead: AmazonEmber_Bd;
+	--fnt-Body: AmazonEmber_Lt;
+	--fnt-size-Headline: 2.5rem;
+	--fnt-size-Subhead: calc(
+		var(--fnt-size-Headline) / 2
+	); /* Subhead font size is half of headline font size */
+	--fnt-size-Body: 1.33rem; /* Body font size */
+	--space-SpaceAfterHeadline: calc(
+		var(--fnt-size-Headline) * 2 / 3
+	); /* Space after headline */
+	--space-BetweenFonts: 0.5rem; /* Space between different fonts */
+	--leading-Headline: calc(
+		var(--fnt-size-Headline) * 1.33
+	); /* Leading for headlines */
+	--tracking-Headline: 0; /* Tracking for headlines */
+	--tracking-Body: 0; /* Tracking for body text */
+	--min-line-length: 15; /* Minimum words per line for body text */
+	--white-space-border-distance: 2rem; /* Minimum distance from borders */
+	--white-space-foreground-distance: 1.5rem; /* Minimum distance from other foreground objects */
 }
 
 /* FONTS src: https://developer.amazon.com/en-US/alexa/branding/echo-guidelines/identity-guidelines/typography */
 @font-face {
-    font-family: AmazonEmberDisplay_Lt;
-    src: url("./fonts/Ember Display/AmazonEmberDisplay_Lt.ttf");
-    font-size: var(--fnt-size-Headline);
+	font-family: AmazonEmberDisplay_Lt;
+	src: url("./fonts/Ember Display/AmazonEmberDisplay_Lt.ttf");
+	font-size: var(--fnt-size-Headline);
 }
 
 @font-face {
-    font-family: AmazonEmber_Bd;
-    src: url("./fonts/Ember/AmazonEmber_Bd.ttf");
-    font-size: var(--fnt-size-Subhead);
+	font-family: AmazonEmber_Bd;
+	src: url("./fonts/Ember/AmazonEmber_Bd.ttf");
+	font-size: var(--fnt-size-Subhead);
 }
 
 @font-face {
-    font-family: AmazonEmber_Lt;
-    src: url("./fonts/Ember/AmazonEmber_Lt.ttf");
-    font-size: var(--fnt-size-Body);
+	font-family: AmazonEmber_Lt;
+	src: url("./fonts/Ember/AmazonEmber_Lt.ttf");
+	font-size: var(--fnt-size-Body);
 }
 
 /* ELEMENTS SIZES */
 
 h1 {
-    font-family: var(--fnt-Headline);
-    font-size: var(--fnt-size-Headline);
+	font-family: var(--fnt-Headline);
+	font-size: var(--fnt-size-Headline);
 }
 
 h2 {
-    font-family: var(--fnt-Subhead);
-    font-size: var(--fnt-size-Subhead);
+	font-family: var(--fnt-Subhead);
+	font-size: var(--fnt-size-Subhead);
 }
 
 p {
-    font-family: var(--fnt-Body);
-    font-size: var(--fnt-size-Body);
+	font-family: var(--fnt-Body);
+	font-size: var(--fnt-size-Body);
 }
 
 body {
-    font-family: var(--fnt-Body);
-    font-size: var(--fnt-size-Body);
+	font-family: var(--fnt-Body);
+	font-size: var(--fnt-size-Body);
 }
 
+/* MEDIA QUERIES */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	body {
+		font-size: 1rem;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	p {
+		font-size: 1.33rem;
+	}
+
+	body {
+		font-size: 1.33rem;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	h1 {
+		font-size: 3rem;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+	}
+
+	p {
+		font-size: 1.5rem;
+	}
+
+	body {
+		font-size: 1.5rem;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	h1 {
+		font-size: 3.5rem;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	p {
+		font-size: 1.75rem;
+	}
+
+	body {
+		font-size: 1.75rem;
+	}
+}

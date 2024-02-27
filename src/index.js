@@ -1,4 +1,8 @@
-import {cartManagement, priceBeautify, additionalStarCalc} from './Constant Fucntions/dataManipulations.js';
+import {
+	cartManagement,
+	priceBeautify,
+	additionalStarCalc,
+} from "./Constant Fucntions/dataManipulations.js";
 
 const getProducts = async () => {
 	const data = await (await fetch("https://fakestoreapi.com/products")).json();
@@ -8,7 +12,9 @@ const getProducts = async () => {
 const renderProducts = async () => {
 	cartManagement();
 	const products = await getProducts();
-	const sortedByRating = await products.sort((a, b) => b.rating.rate - a.rating.rate);
+	const sortedByRating = await products.sort(
+		(a, b) => b.rating.rate - a.rating.rate
+	);
 
 	console.log(sortedByRating);
 	const displaySlides = async () => {
@@ -16,7 +22,7 @@ const renderProducts = async () => {
 		slides.forEach((slide, index) => {
 			slide.querySelector("img").src = sortedByRating[index].image;
 		});
-	}
+	};
 
 	const displayBestRated = async () => {
 		const productContainer = document.querySelector(".product-container");
@@ -60,13 +66,12 @@ const renderProducts = async () => {
 			});
 			productContainer.appendChild(productCard);
 		}
-	}
+	};
 
 	await displaySlides();
 	await displayBestRated();
-}
+};
 renderProducts();
-
 
 // SLIDER
 
@@ -132,7 +137,42 @@ prevButton.addEventListener("click", () => {
 	nextSlideTimer = setInterval(nextSlide, intervalTime);
 });
 
+slides.addEventListener("touchstart", handleTouchStart, false);
+slides.addEventListener("touchmove", handleTouchMove, false);
+
+let x1 = null;
+let y1 = null;
+
+function handleTouchStart(event) {
+	const firstTouch = event.touches[0];
+	x1 = firstTouch.clientX;
+	y1 = firstTouch.clientY;
+}
+
+function handleTouchMove(event) {
+	if (!x1 || !y1) {
+		return;
+	}
+
+	const x2 = event.touches[0].clientX;
+	const y2 = event.touches[0].clientY;
+	const xDiff = x2 - x1;
+	const yDiff = y2 - y1;
+
+	if (Math.abs(xDiff) > Math.abs(yDiff)) {
+		if (xDiff > 0) {
+			clearInterval(nextSlideTimer);
+			prevSlide();
+			nextSlideTimer = setInterval(nextSlide, intervalTime);
+		} else {
+			clearInterval(nextSlideTimer);
+			nextSlide();
+			nextSlideTimer = setInterval(nextSlide, intervalTime);
+		}
+	}
+
+	x1 = null;
+	y1 = null;
+}
+
 // Product Section
-
-
-

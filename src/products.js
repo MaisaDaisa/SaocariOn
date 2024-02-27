@@ -1,4 +1,8 @@
-import { cartManagement, priceBeautify, additionalStarCalc} from "./Constant Fucntions/dataManipulations.js";
+import {
+	cartManagement,
+	priceBeautify,
+	additionalStarCalc,
+} from "./Constant Fucntions/dataManipulations.js";
 
 //TODO: query Params: category, search
 
@@ -10,7 +14,6 @@ import { cartManagement, priceBeautify, additionalStarCalc} from "./Constant Fuc
 // Global variables
 
 let globalParams = Object;
-
 
 // Fetch and Filter Functions
 
@@ -73,8 +76,8 @@ async function GetData() {
 }
 
 async function renderProducts(data) {
-    const productsList = document.querySelector(".products-list");
-    const fullStar = `<i class="fa-solid fa-star"></i>`;
+	const productsList = document.querySelector(".products-list");
+	const fullStar = `<i class="fa-solid fa-star"></i>`;
 	console.log(data);
 	data.forEach((product) => {
 		const price = priceBeautify(product.price);
@@ -111,18 +114,17 @@ async function renderProducts(data) {
 }
 
 const initDisplay = async () => {
-    const data = await GetData();
-    if (data.length !== 0) {
-        renderProducts(data);
-    } else {
-        const productsList = document.querySelector(".products-list");
-        productsList.style 
-        const text = document.createElement("h1");
-        text.textContent = "No Products Found";
-        productsList.appendChild(text);
-    }
-
-}
+	const data = await GetData();
+	if (data.length !== 0) {
+		renderProducts(data);
+	} else {
+		const productsList = document.querySelector(".products-list");
+		productsList.style;
+		const text = document.createElement("h1");
+		text.textContent = "No Products Found";
+		productsList.appendChild(text);
+	}
+};
 
 cartManagement();
 initDisplay();
@@ -130,14 +132,20 @@ initDisplay();
 // Filter Functionality
 
 const redirectParams = () => {
-    const url = new URL(window.location.href);
-    url.search = new URLSearchParams(globalParams).toString();
-    window.open(url, "_self");
-}
+	const url = new URL(window.location.href);
+	url.search = new URLSearchParams(globalParams).toString();
+	window.open(url, "_self");
+};
 
-const filterByRating = document.querySelectorAll(".filter-container .filter-ratings li");
-const filterByPrice = document.querySelectorAll(".filter-container .filter-price li");
-const filterByCategory = document.querySelectorAll(".filter-container .filter-category li");
+const filterByRating = document.querySelectorAll(
+	".filter-container .filter-ratings li"
+);
+const filterByPrice = document.querySelectorAll(
+	".filter-container .filter-price li"
+);
+const filterByCategory = document.querySelectorAll(
+	".filter-container .filter-category li"
+);
 const ratingIncrement = [4, 3, 2, 1];
 const priceRange = ["0-25", "25-50", "50-100", "100-200", "200-100000"];
 const categoryList = [
@@ -148,23 +156,22 @@ const categoryList = [
 ];
 
 filterByRating.forEach((rating, index) => {
-    rating.addEventListener("click", () => {
-        globalParams["rating"] = ratingIncrement[index];
-        redirectParams();
-    });
+	rating.addEventListener("click", () => {
+		globalParams["rating"] = ratingIncrement[index];
+		redirectParams();
+	});
 });
 
-filterByPrice.forEach((price, index) => { 
-    price.addEventListener("click", () => {
-        globalParams["price"] = priceRange[index];
-        redirectParams();
-    });
+filterByPrice.forEach((price, index) => {
+	price.addEventListener("click", () => {
+		globalParams["price"] = priceRange[index];
+		redirectParams();
+	});
 });
 
 filterByCategory.forEach((category, index) => {
-    category.addEventListener("click", () => {
-        globalParams["category"] = categoryList[index];
-        redirectParams();
-    });
+	category.addEventListener("click", () => {
+		globalParams["category"] = categoryList[index];
+		redirectParams();
+	});
 });
-

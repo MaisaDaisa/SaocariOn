@@ -1,8 +1,5 @@
 @import url("./global.css");
 
-
-
-
 /* SECTIONS ------------------------------------------- */
 
 :root {
@@ -25,33 +22,27 @@ section {
 	--num-slide-grad-prec: 45%;
 }
 
-.slide-section{
+.slide-section {
 	padding-top: 0rem;
 }
 
 .slide-container {
-	max-height: 65dvh;
+	max-height: 65vh;
 	position: relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
-
-.slides {
-	display: flex;
-	overflow-x: scroll;
-}
-
-.slides::-webkit-scrollbar {
-	display: none;
-}
-
 .slides {
 	display: grid;
+	overflow-x: hidden;
 	grid-template-columns: repeat(4, auto);
 	flex: none;
 	width: var(--num-slide-width);
 	height: 100%;
+}
+.slides::-webkit-scrollbar {
+	display: none;
 }
 
 /* Slider Item */
@@ -60,7 +51,7 @@ section {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	overflow: hidden;
+	overflow-x: hidden;
 	height: 100%;
 	width: var(--num-slide-width);
 	background: rgb(55, 71, 90);
@@ -97,7 +88,7 @@ section {
 }
 
 .slide-text {
-	width: 35%;
+	width: calc(var(--num-slide-grad-prec) - 10%);
 	display: flex;
 	flex-direction: column;
 }
@@ -173,9 +164,14 @@ section {
 
 .category-items ul {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	gap: 2rem;
+}
+.category-items div {
+	display: flex;
+	gap: 1rem;
 }
 
 .category-items ul li {
@@ -191,6 +187,7 @@ section {
 }
 
 .category-items ul li a {
+	white-space: nowrap;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -199,8 +196,6 @@ section {
 	gap: 1rem;
 	list-style: none;
 	padding: 1rem 2rem;
-	border-radius: 16rem;
-	cursor: pointer;
 }
 .category-items i,
 .category-items p {
@@ -262,12 +257,11 @@ section {
 	overflow: hidden;
 }
 
-
 .hovered {
 	flex: 2;
 }
 
-.product-image{
+.product-image {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -329,4 +323,147 @@ section {
 .product-delivery p span {
 	font-weight: 800;
 	color: black;
+}
+
+@media screen and (max-width: 1024px) {
+	.slide-section {
+		padding: 0px;
+	}
+	.slider-button {
+		display: none;
+	}
+
+	.slide-container {
+		height: 45vh;
+		max-height: 45vh;
+		width: 100%;
+	}
+	.slide-text h1 {
+		font-size: 2rem;
+	}
+	.slide-text p {
+		font-weight: 600;
+		font-size: 1rem;
+	}
+
+	/* Categories */
+	.categories {
+		padding: 1rem 1rem;
+	}
+	.category-items ul {
+		gap: 1rem;
+	}
+
+	.category-items ul li a {
+		padding: 0.7rem 1rem;
+		cursor: pointer;
+	}
+	.category-items ul li a p {
+		font-size: 70%;
+	}
+
+	:root {
+		--num-slide-width: 100vw;
+		--num-slide-grad-prec: 55%;
+	}
+
+	/* Products */
+	.best-rated h1 {
+		font-size: 3rem;
+	}
+	.best-rated .product-nav {
+		display: none;
+	}
+
+	.product-container {
+		padding: 0.5rem 0.5rem;
+		height: 100%;
+		width: 100vw;
+		flex-direction: column;
+	}
+	.product-card {
+		height: 40vh;
+		width: 100%;
+		flex-direction: row;
+		overflow: visible;
+	}
+
+	.product-image {
+		flex-shrink: 0;
+		width: 40%;
+	}
+
+	.product-card .product-image a {
+		object-fit: contain;
+		height: 100%;
+		max-height: 100%;
+	}
+	.product-card img {
+		padding: 0.5rem;
+	}
+
+	.product-details {
+		height: 100%;
+	}
+
+	.product-card h3 {
+		font-size: 1rem;
+	}
+
+	.category-items ul {
+		gap: 1rem;
+	}
+
+	.category-items ul li a {
+		padding: 1rem 1.5rem;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	:root {
+		--num-slide-width: 90vw;
+		--num-slide-grad-prec: 50%;
+	}
+	/* Products */
+
+	.slide-text h1 {
+		font-size: 3rem;
+	}
+	.slide-text p {
+		font-size: 1.5rem;
+	}
+
+	/* Categories */
+	.categories {
+		padding: 2rem 2rem;
+	}
+	.category-items ul li a p {
+		font-size: 100%;
+	}
+	.category-items ul li a {
+		padding: 1rem 2rem;
+		cursor: pointer;
+	}
+
+	/* Products */
+	.product-container {
+		padding: 1rem 2rem;
+	}
+	.product-card {
+		height: 20vh;
+	}
+	.product-card .product-image {
+		height: 20vh;
+		width: 40%;
+	}
+	.product-card .product-details h3 {
+		font-size: 1.7rem;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	/* Products */
+	.category-items ul li a {
+		padding: 1rem 1.2rem;
+	}
 }

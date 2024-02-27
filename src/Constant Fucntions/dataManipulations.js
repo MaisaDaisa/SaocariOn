@@ -2,13 +2,15 @@ export const cartManagement = () => {
     if (!localStorage.getItem("cart")) {
         localStorage.setItem("cart", "{}");
     } else {
-        const cartNumber = document.querySelector(".cart-num");
+        const cartNumber = document.querySelectorAll(".cart-num");
         const cart = JSON.parse(localStorage.getItem("cart"));
         let total = 0;
         for (const key in cart) {
             total += cart[key];
         }
-        cartNumber.innerHTML = total;
+        cartNumber.forEach((element) => {
+            element.innerHTML = total;
+        });
     }
 }
 
