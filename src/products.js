@@ -175,3 +175,11 @@ filterByCategory.forEach((category, index) => {
 		redirectParams();
 	});
 });
+
+
+if (window.innerWidth < 500) {
+	//I use this because user can't see the filter options on mobile until you show the a sign that it is scrollable with a glimpse of the next filter option
+	console.log("Mobile Small size");
+	document.querySelector(".filter-container").scrollLeft = 90;
+}
+

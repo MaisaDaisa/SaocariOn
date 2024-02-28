@@ -17,7 +17,7 @@ if (localStorage.getItem('saocariOn_token')) {
             
             // NOTE: THIS IS NOT A SECURE WAY TO CHECK THE TOKEN BECAUSE THE USER CAN CHANGE THE TIME ON THEIR DEVICE THATS WHY 
             // THE TOKEN IS USUALLY CHECKED ON THE BACKEND
-           console.log('Token time is expired, going back to login page')
+           console.log('Token time is Okay')
        } else {
               console.log('Token is expired, going back to login page')
               window.open('login.html', '_self')
