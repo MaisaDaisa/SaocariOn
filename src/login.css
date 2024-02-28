@@ -34,7 +34,7 @@ main {
 	text-align: left;
 	width: 14rem;
 	padding: 1rem;
-	border: 1px solid var(--clr-lighter-gray);
+	border: 2px solid var(--clr-lighter-gray);
 	border-radius: 1rem;
 	background: var(--clr-secondary-gray);
 	color: var(--clr-primary-orange);
@@ -55,4 +55,8 @@ main {
 	color: var(--clr-white);
 	font-size: 1.2rem;
 	cursor: pointer;
+}
+
+.login-form p {
+	color: red;
 }
