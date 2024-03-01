@@ -93,7 +93,8 @@ const displayItems = (items) => {
 			delete cartInLocal[key];
 			localStorage.setItem("cart", JSON.stringify(cartInLocal));
 			cartManagement();
-			updateTotalPrice(items);
+			console.log(cartInLocal);
+			updateTotalPrice(cartInLocal);
 		});
 		cartContainer.appendChild(cartItem);
 	}
